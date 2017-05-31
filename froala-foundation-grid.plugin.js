@@ -73,7 +73,7 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
                 $grid += "<div class='columns medium-5'></div><div class='columns medium-7'></div>";
                 break;           }
 
-        this.html.insert("<img src='"+ val + "' />");
+        this.html.insert($grid);
         this.undo.saveStep();
     },
 
