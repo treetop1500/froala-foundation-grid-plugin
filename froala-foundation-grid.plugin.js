@@ -22,7 +22,7 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
         "2x6" : "2|2|2|2|2|2",
         "3x4" : "3|3|3|3",
         "4x3" : "4|4|4",
-        "6x2" : "6|6",
+        "6x2" : "<img src='images/6x2.gif' />",
         "7|5" : "7|5",
         "5|7" : "5|7",
     },
