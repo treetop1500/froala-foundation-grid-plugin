@@ -18,13 +18,19 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
 
     // Options for the dropdown.
     options: {
-        "12x1" : "1|1|1|1|1|1|1|1|1|1|1|1",
-        "2x6" : "2|2|2|2|2|2",
-        "3x4" : "3|3|3|3",
-        "4x3" : "4|4|4",
-        "6x2" : "<img src='images/6x2.gif' />",
-        "7|5" : "7|5",
-        "5|7" : "5|7",
+        "12x1" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/1x12.gif' />",
+        "2x6" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/2x6.gif' />",
+        "3x4" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/3x4.gif' />",
+        "4x3" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/4x3.gif' />",
+        "6x2" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/6x2.gif' />",
+        "7|5" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/7-5.gif' />",
+        "5|7" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/5-7.gif' />",
+        "8|4" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/8-4.gif' />",
+        "4|8" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/4-8.gif' />",
+        "9|3" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/9-3.gif' />",
+        "3|9" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/3-9.gif' />",
+        "10|2" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/10-2.gif' />",
+        "2|10" : "<img src='/javascripts/vendor/froala-editor-plugins/treetop1500/froala-foundation-grid-plugin/images/2-10.gif' />",
     },
 
     // If present, the options property will be ignored.
@@ -71,8 +77,27 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
                 break;
             case "5|7":
                 $grid += "<div class='columns medium-5'></div><div class='columns medium-7'></div>";
-                break;           }
-        $grid += "</div><!-- end row -->"
+                break;
+            case "8|4":
+                $grid += "<div class='columns medium-8'></div><div class='columns medium-4'></div>";
+                break;
+            case "4|8":
+                $grid += "<div class='columns medium-4'></div><div class='columns medium-8'></div>";
+                break;
+            case "9|3":
+                $grid += "<div class='columns medium-9'></div><div class='columns medium-3'></div>";
+                break;
+            case "3|9":
+                $grid += "<div class='columns medium-3'></div><div class='columns medium-9'></div>";
+                break;
+            case "10|2":
+                $grid += "<div class='columns medium-10'></div><div class='columns medium-2'></div>";
+                break;
+            case "2|10":
+                $grid += "<div class='columns medium-5'></div><div class='columns medium-10'></div>";
+                break;
+        }
+        $grid += "</div><!-- end row -->";
         this.html.insert($grid);
         this.undo.saveStep();
 
@@ -84,7 +109,6 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
 
             return $columns;
         };
-
     },
 
     // Called when the dropdown button state might have changed.
