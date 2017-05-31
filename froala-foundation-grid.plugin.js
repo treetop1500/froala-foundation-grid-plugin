@@ -1,6 +1,6 @@
 /**
- * Created by Robert Wade on 9/2/16.
- */
+* Created by Robert Wade on 9/2/16.
+*/
 // Define an icon.
 $.FroalaEditor.DefineIcon('foundationGridIcon', { NAME: 'th-large'})
 
@@ -30,7 +30,7 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
     // If present, the options property will be ignored.
     // It can be used to define a custom HTML for the dropdown.
     //html: function () {
-        // The current context is the editor instance.
+    // The current context is the editor instance.
     //    return '';
     //},
 
@@ -48,23 +48,23 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
         // The current context is the editor instance.
         //this.html.insertImageHTML("<img src='" + val + '" />');
 
-        var $grid = "<div class='row'>";
-        switch ($val) {
+        var $grid = "<div class='row inserted'>";
+        switch (val) {
             case "12x1":
-                $grid += this.repeatColumn(1,12);
+                $grid += repeatColumn(1,12);
                 break;
             default:
             case "2x6":
-                $grid += this.repeatColumn(2,6);
+                $grid += repeatColumn(2,6);
                 break;
             case "3x4":
-                $grid += this.repeatColumn(3,4);
+                $grid += repeatColumn(3,4);
                 break;
             case "4x3":
-                $grid += this.repeatColumn(4,3);
+                $grid += repeatColumn(4,3);
                 break;
             case "6x2":
-                $grid += this.repeatColumn(6,2);
+                $grid += repeatColumn(6,2);
                 break;
             case "7|5":
                 $grid += "<div class='columns medium-7'></div><div class='columns medium-5'></div>";
@@ -72,18 +72,19 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
             case "5|7":
                 $grid += "<div class='columns medium-5'></div><div class='columns medium-7'></div>";
                 break;           }
-
+        $grid += "</div><!-- end row -->"
         this.html.insert($grid);
         this.undo.saveStep();
-    },
 
-    repeatColumn: function($col,$inc) {
-        var $columns = "";
-        for ($i = 0; $i < $inc; $i++) {
-            $columns += "<div class='columns medium-"+$col+"'></div>";
-        }
+        function repeatColumn($col,$inc) {
+            var $columns = "";
+            for ($i = 0; $i < $inc; $i++) {
+                $columns += "<div class='columns medium-"+$col+"'></div>";
+            }
 
-        return $columns;
+            return $columns;
+        };
+
     },
 
     // Called when the dropdown button state might have changed.
@@ -98,3 +99,4 @@ $.FroalaEditor.RegisterCommand('foundationGridRowDropdown', {
         //console.log (this.selection.element());
     }
 });
+

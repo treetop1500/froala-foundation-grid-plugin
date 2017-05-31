@@ -1,0 +1,12 @@
+div.fr-element.fr-view {
+  div.row.inserted {
+    margin: .5rem;
+    border-top: 1px dashed lighten(blue,10%);
+    border-left: 1px dashed lighten(blue,10%);
+    div.columns {
+      border-right: 1px dashed lighten(blue,10%);
+      border-bottom: 1px dashed lighten(blue,10%);
+      padding: 2rem;
+    }
+  }
+}
